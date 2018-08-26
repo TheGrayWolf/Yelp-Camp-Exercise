@@ -1,0 +1,23 @@
+<!-- include the partials header -->
+<% include ../partials/header %>
+<div class="container">
+    <div class="row"></div>
+        
+        <div style="width: 30%; margin: 25px auto;">
+        <!-- New Camp Form with 3 inputs -->
+            <form action="/campgrounds/<%= campground._id %>/comments" method="POST">
+                <h2 style="text-align: center; width: 100%; white-space: normal">Add New Comment to <%= campground.name %></h1>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="comment[text]" placeholder="TEXT">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block"  style="white-space: normal; text-align: center">Submit</button>
+                </div>
+            </form>
+            <!-- Cancel creation by going back -->
+            <a href="/campgrounds">Go Back</a>
+        </div>
+    </div>
+</div>
+<!-- include the partials foter -->
+<% include ../partials/foter %>

@@ -1,0 +1,39 @@
+<!-- include the partials header -->
+<% include ../partials/header %>
+
+<div class="container">
+    <!-- header styled using bootrap -->
+    <header  class="jumbotron">
+        <div class="container">
+        <h1 style="white-space: normal; text-align: center" >Welcome to My Exercise</h1>
+        <p style="white-space: normal; text-align: center" >View our campgrounds</p>
+        <p>
+            <a class="btn btn-primary btn-lg;" style="white-space: normal" href="/campgrounds/new">Add New Campground</a>
+        </p>
+        </div>
+    </header>
+    
+    <div class="row flex text-center" style="display: flex; flex-wrap: wrap">
+        <!-- show each campground -->
+        <% campgrounds.forEach(function(campground){ %>
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail">
+                    <img src="<%= campground.image %>">
+                    <div class="caption">
+                        <h4><%= campground.name %></h4>    
+                    </div>
+                    <p>
+                        <!-- show Specific campground info -->
+                        <a href="/campgrounds/<%=campground._id%>" class="btn btn-primary">More Info</a>
+                    </p>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+<!-- Add new campground link -->
+<a href="/campgrounds/new">Add New Campground</a>
+
+<!-- include the partials foter -->
+<% include ../partials/foter %>
