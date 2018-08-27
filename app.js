@@ -25,8 +25,8 @@ app.use(express.static(__dirname + "/public"));
     
 // seedDB(); //seed the database
 //connect mongoose to DB
-//mongoose.connect("mongodb://localhost/yelp_camp");
-mongoose.connect("mongodb://alincraciunescu:carigan69@ds235302.mlab.com:35302/yelpcampexercise");
+mongoose.connect(process.env.DATABASEURL);
+//mongoose.connect("mongodb://alincraciunescu:carigan69@ds235302.mlab.com:35302/yelpcampexercise");
 //mongodb://alincraciunescu:carigan69@ds235302.mlab.com:35302/yelpcampexercise
 //use body parser
 app.use(bodyParser.urlencoded({extended: true}));
